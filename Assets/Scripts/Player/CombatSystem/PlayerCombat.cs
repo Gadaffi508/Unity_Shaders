@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
 
     private Animator _animator;
 
-    private PlayerMovement _movement;
+    private PlayerMovementCombat _movement;
     private Camera _camera;
     private GameObject _currentEnemy;
     private Vector3 _inputDirection;
@@ -20,7 +20,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Start()
     {
-        _movement = GetComponent<PlayerMovement>();
+        _movement = GetComponent<PlayerMovementCombat>();
         _camera = Camera.main;
         _animator = GetComponentInChildren<Animator>();
     }
