@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 152146620}
   - component: {fileID: 152146619}
   - component: {fileID: 152146618}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2803,7 +2803,7 @@ MonoBehaviour:
   environmentLayer:
     serializedVersion: 2
     m_Bits: 64
-  pelvisOffset: 0
+  pelvisOffset: 0.03
   pelvisUpAndDownSpeed: 0.28
   feetToIkPosSpeed: 0.5
   leftFootAnimVariableName: LeftFootCurve
