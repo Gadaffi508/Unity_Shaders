@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class IKFootPlacement : MonoBehaviour
@@ -19,7 +20,7 @@ public class IKFootPlacement : MonoBehaviour
 
     public bool useProIkFeature = false;
     public bool showSolverDebug = true;
-
+    
     private float lastPelvisPosY,
         lastRightFootPosY,
         lastLeftFootPosY;
