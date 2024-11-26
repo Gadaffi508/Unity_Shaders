@@ -17,13 +17,15 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
-  stringTagMap: {}
+  stringTagMap:
+    MotionVector: User
   disabledShaderPasses:
+  - DistortionVectors
+  - MOTIONVECTORS
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
-  - MOTIONVECTORS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -51,6 +53,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DistortionVectorMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissiveColorMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,6 +76,10 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: d9c0dd5cdac07b145be73329e489869a, type: 3}
         m_Scale: {x: 100, y: 100}
+        m_Offset: {x: 0, y: 0}
+    - _MainText:
+        m_Texture: {fileID: 2800000, guid: d9c0dd5cdac07b145be73329e489869a, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
         m_Texture: {fileID: 0}
@@ -107,6 +117,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _UnlitColorMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -138,6 +152,7 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _CoatMask: 0
+    - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -150,6 +165,21 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
+    - _DistortionBlendMode: 0
+    - _DistortionBlurBlendMode: 0
+    - _DistortionBlurDstBlend: 1
+    - _DistortionBlurRemapMax: 1
+    - _DistortionBlurRemapMin: 0
+    - _DistortionBlurScale: 1
+    - _DistortionBlurSrcBlend: 1
+    - _DistortionDepthTest: 1
+    - _DistortionDstBlend: 1
+    - _DistortionEnable: 0
+    - _DistortionOnly: 0
+    - _DistortionScale: 1
+    - _DistortionSrcBlend: 1
+    - _DistortionVectorBias: -1
+    - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
@@ -171,6 +201,7 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
+    - _IncludeIndirectLighting: 1
     - _InvTilingScale: 0.01
     - _Ior: 1.5
     - _IridescenceMask: 1
@@ -192,6 +223,9 @@ Material:
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
+    - _RenderQueueType: 1
+    - _ShockWaveStreng: -0.1
+    - _Size: 0.05
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -201,10 +235,12 @@ Material:
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
     - _StencilRefGBuffer: 10
     - _StencilRefMV: 40
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
     - _SubsurfaceMask: 1
@@ -228,6 +264,7 @@ Material:
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
+    - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
@@ -241,12 +278,15 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _RingSpanwPoss: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+    - _UnlitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9185292313026524308
 MonoBehaviour:
